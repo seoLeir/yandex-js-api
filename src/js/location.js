@@ -1,9 +1,5 @@
 ymaps.ready(function () {
-    ymaps.option.Manager.set({
-        // Выбор светлой или темной темы в зависимости от системных настроек
-        theme: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-    });
-
+    ymaps.option.Manager['theme'] = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
     // Получение текущей локации пользователя
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function (position) {
